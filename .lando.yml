@@ -1,0 +1,17 @@
+name: wordpress-project
+recipe: wordpress
+config:
+  webroot: wordpress
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  database:
+    type: mysql
+    portforward: true
+    creds:
+      user: username
+      password: password
+      database: wordpress
+
